@@ -21,7 +21,6 @@ WebFrame::WebFrame(wxString url)
 
     m_browser->Create(this, wxID_ANY, url, wxDefaultPosition, wxDefaultSize);
     m_browser->Bind(wxEVT_WEBVIEW_LOADED, &WebFrame::onLoad, this);
-    addGui();
 }
 
 WebFrame::~WebFrame()
@@ -38,15 +37,3 @@ void WebFrame::onLoad(wxWebViewEvent &event)
     wxPuts(code);
 }
 
-void WebFrame::addGui()
-{
-    wxBoxSizer *size;
-    size = new wxBoxSizer(wxVERTICAL);
-
-    size->Add(m_browser, 1, wxALL | wxEXPAND, 5);
-
-    this->SetSizer(size);
-    this->Layout();
-
-    this->Centre(wxBOTH);
-}

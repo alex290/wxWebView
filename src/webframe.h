@@ -27,7 +27,6 @@ private:
     wxString m_url;
     wxWebView *m_browser;
 
-    void addGui();
     void onLoad(wxWebViewEvent &event);
 };
 
